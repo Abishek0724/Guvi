@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obesity Infographic</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background: #fdfdfd;
+      color: white;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .percentage-bar {
+      height: 20px;
+      background-color: aliceblue;
+      border-radius: 5px;
+    }
+    .info-card {
+      background-color: black;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .img-icon {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h2 class="text-center mb-4 text-info">Obesity Infographics</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="info-card">
+          <h4 class="section-title">Increasing Portion Size</h4>
+          <p>Modern portions have drastically increased leading to obesity concerns.</p>
+        <div>
+            <img src="Burger.webp" alt="burger" class="img-icon">
+            <img src="fries.webp" alt="fries" class="img-icon">
+            <img src="donut.jpg" alt="donut" class="img-icon">
+            <img src="icecream.webp" alt="Ice cream" class="img-icon">
+        </div>
+        </div>
+
+        <div class="info-card">
+          <h4 class="section-title">Obesity Status</h4>
+          <p><strong>Nearly 500 million</strong> people suffer from obesity.</p>
+          <ul class="list-unstyled">
+            <li><strong>Adults:</strong> 65%</li>
+            <li><strong>Young:</strong> 34%</li>
+            <li><strong>Children:</strong> 10%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="info-card">
+          <h4 class="section-title">Healthy Eating</h4>
+          <p>Recommended intake:</p>
+          <div class="mb-2">
+            Whole Grains - 100%
+            <div class="percentage-bar w-100 bg-success"></div>
+          </div>
+          <div class="mb-2">
+            Fruits & Vegetables - 75%
+            <div class="percentage-bar w-75 bg-warning"></div>
+          </div>
+          <div class="mb-2">
+            Meat & Fish - 50%
+            <div class="percentage-bar w-50 bg-danger"></div>
+          </div>
+          <div class="mb-2">
+            Milk & Cheese - 25%
+            <div class="percentage-bar w-25 bg-secondary"></div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4 class="section-title">Health Impact</h4>
+        <div class="d-flex align-items-center mb-2">
+            <img src="syringe.png" class="img-icon me-2" alt="Diabetes">
+            <span>Diabetes: 800,000 people</span>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <img src="heart-with-pulse.png" class="img-icon me-2" alt="Stroke" />
+            <span>Stroke: 800,000 people</span>
+        </div>
+        <div class="d-flex align-items-center mb-2">
+            <img src="brain.png" class="img-icon me-2" alt="Cancer" />
+            <span>Cancer: 800,000 people</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

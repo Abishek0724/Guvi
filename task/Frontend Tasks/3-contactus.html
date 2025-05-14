@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us Form</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+         form div {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+        input{
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            width: 300px;
+        }
+        button{
+            display: block;
+            margin: 10px auto;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+
+        }
+        .radio-group {
+            display: flex;
+            justify-content: center;
+            gap: 0px;
+            align-items: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Fill this to reach us!</h1>
+    <form>
+        <div>
+        <label for="name" >Enter your name:</label>
+        <input type="text" name="name" placeholder="Enter your name"></div>
+        <div>
+        <label for="Email">Email ID:</label>
+        <input type="email" name="email" placeholder="Enter your Email ID"></div>
+        <div>
+        <label for="Phone Number">Mobile No:</label>
+        <input type="tel" name="Mob number" placeholder="Enter your phn number"></div>
+        <div class="radio-group">
+            <label>Employee Type:</label>
+            <input type="radio" name="employeeType" id="salaried" value="Salaried">
+            <label for="salaried">Salaried</label>
+            <input type="radio" name="employeeType" id="ownBusiness" value="Own Business">
+            <label for="ownBusiness">Own Business</label>
+        </div>
+          <!--
+            task no.6 adding radio buttons also done 
+            task no.7 link cannot be accesed
+             -->
+    </form>
+    <button  onclick="mesage()">submit</button>
+    <script> function mesage()
+            {
+                alert("we will reach you soon");
+
+            }
+    </script>
+</body>
+</html>
+
