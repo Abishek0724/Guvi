@@ -12,11 +12,11 @@ public class Employee {
     private String email;
     private String location;
 
-    // ✅ Add No-Args Constructor
+
     public Employee() {
     }
 
-    // Optional: Add All-Args Constructor (if needed)
+    
     public Employee(String id, String name, String email, String location) {
         this.id = id;
         this.name = name;
@@ -24,7 +24,6 @@ public class Employee {
         this.location = location;
     }
 
-    // Getters and Setters...
     public String getId() {
         return id;
     }

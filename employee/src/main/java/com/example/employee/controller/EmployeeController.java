@@ -6,7 +6,7 @@ import com.example.employee.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;  // ✅ Includes @ModelAttribute, @GetMapping, @PostMapping, etc.
+import org.springframework.web.bind.annotation.*;  
 
 import java.util.List;
 import java.util.Optional;
@@ -24,7 +24,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/addEmployee")
-    public String addEmployee(@ModelAttribute Employee emp) {  // ✅ Fix: import ModelAttribute
+    public String addEmployee(@ModelAttribute Employee emp) {  
         repository.save(emp);
         return "redirect:/displayAll";
     }
