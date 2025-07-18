@@ -31,9 +31,9 @@ public class SmsServiceImpl implements SmsService {
                     new PhoneNumber(to),
                     new PhoneNumber(fromPhone),
                     body).create();
-            log.info("✅ SMS sent to {} with SID: {}", to, message.getSid());
+            log.info("SMS sent to {} with SID: {}", to, message.getSid());
         } catch (Exception e) {
-            log.error("❌ Failed to send SMS to {}: {}", to, e.getMessage());
+            log.error("Failed to send SMS to {}: {}", to, e.getMessage());
         }
     }
 }

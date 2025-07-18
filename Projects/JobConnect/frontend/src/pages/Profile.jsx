@@ -19,7 +19,6 @@ const Profile = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // ✅ Fetch profile on mount
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -46,7 +45,6 @@ const Profile = () => {
     setResumeFile(e.target.files[0]);
   };
 
-  // ✅ Submit updated form with resume if present
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -171,7 +169,7 @@ const Profile = () => {
   );
 };
 
-// 🧩 Reusable components
+
 const Input = ({ label, name, type = 'text', value, onChange, required }) => (
   <div>
     <label className="block text-sm font-medium text-gray-700">{label}</label>

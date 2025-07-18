@@ -8,7 +8,6 @@ const ViewApplications = () => {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const dropdownRefs = useRef([]);
 
-  // Fetch applications using updated DTO endpoint
   const fetchApplications = async () => {
     try {
       const res = await api.get('/employer/applications');
@@ -18,7 +17,6 @@ const ViewApplications = () => {
     }
   };
 
-  // Accept or reject application
   const handleAction = async (applicationId, status) => {
     try {
       await api.patch(`/applications/${applicationId}/status`, { status });
@@ -35,7 +33,6 @@ const ViewApplications = () => {
     }
   };
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -65,7 +62,7 @@ const ViewApplications = () => {
                 <th className="py-3 px-4 border-b max-sm:hidden">Job Title</th>
                 <th className="py-3 px-4 border-b max-sm:hidden">Location</th>
                 <th className="py-3 px-4 border-b">Resume</th>
-                <th className="py-3 px-4 border-b">Status</th> {/* ✅ Added */}
+                <th className="py-3 px-4 border-b">Status</th> 
                 <th className="py-3 px-4 border-b">Action</th>
               </tr>
             </thead>
@@ -101,7 +98,6 @@ const ViewApplications = () => {
                     )}
                   </td>
 
-                  {/* ✅ Status column */}
                   <td className="py-2 px-4 border-b capitalize font-medium text-sm">
                     <span
                       className={

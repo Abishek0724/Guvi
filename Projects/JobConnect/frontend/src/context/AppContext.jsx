@@ -1,6 +1,6 @@
-// src/context/AppContext.js
+
 import { createContext, useEffect, useState } from 'react';
-import api from '../api/api'; // ✅ Use centralized API
+import api from '../api/api'; 
 
 export const AppContext = createContext();
 
@@ -13,7 +13,6 @@ export const AppContextProvider = ({ children }) => {
   const [isSearched, setIsSearched] = useState(false);
   const [jobs, setJobs] = useState([]);
 
-  // ✅ Fetch jobs based on current search filter
   const fetchJobs = async () => {
     try {
       const { title, location } = searchFilter;
@@ -28,7 +27,7 @@ export const AppContextProvider = ({ children }) => {
       setJobs(res.data);
     } catch (error) {
       console.error('Failed to fetch jobs from backend:', error);
-      setJobs([]); // fallback to empty
+      setJobs([]); 
     }
   };
   useEffect(() => {

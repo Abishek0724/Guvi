@@ -16,5 +16,5 @@ public interface JobRepository extends JpaRepository<Job, Long> {
 
     List<Job> findByLocationContainingIgnoreCase(String location);
 
-    List<Job> findByCategory(String category); // Added for category filtering
+    List<Job> findByCategory(String category);
 }

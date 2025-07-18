@@ -39,7 +39,7 @@ public class EmployerController {
         return ResponseEntity.ok(employerService.getJobApplications(jobId));
     }
 
-    @GetMapping("/applications") // ✅ NEW endpoint to get all applications for all jobs
+    @GetMapping("/applications")
     public ResponseEntity<List<ApplicationResponseDto>> getAllApplicationsForMyJobs() {
         return ResponseEntity.ok(employerService.getAllApplicationsForMyJobs());
     }

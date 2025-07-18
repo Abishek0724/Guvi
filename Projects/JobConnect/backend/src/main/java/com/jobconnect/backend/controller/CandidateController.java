@@ -47,7 +47,6 @@ public class CandidateController {
         return ResponseEntity.ok(candidateService.applyToJob(dto));
     }
 
-    // CandidateController.java
     @GetMapping("/jobs/{id}")
     public ResponseEntity<JobPostDto> getJobById(@PathVariable Long id) {
         return ResponseEntity.ok(candidateService.getJobById(id));
@@ -57,12 +56,11 @@ public class CandidateController {
     public ResponseEntity<CandidateProfileDto> getMyProfile() {
         CandidateProfileDto profile = candidateService.getMyProfile();
         if (profile == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); // Handle missing profile gracefully
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         return ResponseEntity.ok(profile);
     }
 
-    // ✅ Updated endpoint for multipart profile update with optional resume upload
     @PutMapping(value = "/profile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<CandidateProfileDto> updateProfile(
             @RequestPart("fullName") String fullName,

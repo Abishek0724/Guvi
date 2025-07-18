@@ -1,4 +1,3 @@
-// src/components/JobListing.jsx
 import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 import { assets, JobCategories, JobLocations } from '../assets/assets';
@@ -17,7 +16,6 @@ const JobListing = () => {
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Filter jobs based on selected category & location
   useEffect(() => {
     const matchesCategory = job =>
       selectedCategories.length === 0 || selectedCategories.includes(job.category);
@@ -29,7 +27,7 @@ const JobListing = () => {
     );
 
     setFilteredJobs(filtered);
-    setCurrentPage(1); // Reset pagination
+    setCurrentPage(1); 
   }, [jobs, selectedCategories, selectedLocations]);
 
   const handleCategoryChange = (category) => {

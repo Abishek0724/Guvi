@@ -18,8 +18,6 @@ public class ApplicationResponseDto {
     private String jobLocation;
     private String applicationStatus;
     private LocalDateTime appliedAt;
-
-    // ✅ Direct candidate fields (not nested DTO)
     private String candidateName;
     private String resumeUrl;
 }

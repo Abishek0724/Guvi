@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Quill from 'quill';
 import Navbar from '../components/Navbar';
 import { JobCategories, JobLocations } from '../assets/assets';
-import api from '../api/api'; // 👈 Make sure this is added
+import api from '../api/api'; 
 
 const AddJob = () => {
   const [title, setTitle] = useState('');
@@ -42,7 +42,7 @@ const AddJob = () => {
       });
 
       alert("Job added successfully!");
-      // You can clear fields or redirect here
+      
     } catch (err) {
       console.error("Error adding job:", err);
       alert("Failed to add job.");

@@ -108,7 +108,6 @@ public class EmployerServiceImpl implements EmployerService {
                                                 .applicationStatus(app.getStatus().name())
                                                 .appliedAt(app.getAppliedAt())
 
-                                                // ✅ Fixes:
                                                 .candidateName(app.getCandidate().getCandidateProfile().getFullName())
                                                 .resumeUrl(app.getCandidate().getCandidateProfile().getResumeUrl())
 

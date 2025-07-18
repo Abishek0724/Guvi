@@ -49,7 +49,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
         CandidateProfile profile = candidate.getCandidateProfile();
         if (profile == null) {
-            log.error("❌ Candidate profile not found for user: {}", candidate.getUsername());
+            log.error("Candidate profile not found for user: {}", candidate.getUsername());
             return;
         }
 
@@ -57,7 +57,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         String phone = profile.getPhone();
         String name = profile.getFullName();
 
-        log.info("📨 Notifying candidate {} via email and SMS", name);
+        log.info("Notifying candidate {} via email and SMS", name);
 
         try {
             if (email != null && !email.isBlank()) {
@@ -66,10 +66,10 @@ public class ApplicationServiceImpl implements ApplicationService {
                         "Application Submitted",
                         "Hi " + name + ",\n\nYou have successfully applied for the job: " + job.getTitle());
             } else {
-                log.warn("⚠️ Email is null or empty for user: {}", candidate.getUsername());
+                log.warn("Email is null or empty for user: {}", candidate.getUsername());
             }
         } catch (Exception e) {
-            log.error("❌ Email failed to {}: {}", email, e.getMessage());
+            log.error("Email failed to {}: {}", email, e.getMessage());
         }
 
         try {
@@ -78,10 +78,10 @@ public class ApplicationServiceImpl implements ApplicationService {
                         phone,
                         "JobConnect: You've applied to " + job.getTitle());
             } else {
-                log.warn("⚠️ Phone is null or empty for user: {}", candidate.getUsername());
+                log.warn("Phone is null or empty for user: {}", candidate.getUsername());
             }
         } catch (Exception e) {
-            log.error("❌ SMS failed to {}: {}", phone, e.getMessage());
+            log.error("SMS failed to {}: {}", phone, e.getMessage());
         }
     }
 
@@ -98,7 +98,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         CandidateProfile profile = candidate.getCandidateProfile();
 
         if (profile == null) {
-            log.error("❌ Candidate profile missing for status update: user {}", candidate.getUsername());
+            log.error("Candidate profile missing for status update: user {}", candidate.getUsername());
             return;
         }
 
@@ -113,7 +113,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
         switch (status) {
             case SELECTED:
-                emailBody = "Hi " + name + ",\n\n🎉 Congratulations! You have been SELECTED for the job: " + jobTitle;
+                emailBody = "Hi " + name + ",\n\nCongratulations! You have been SELECTED for the job: " + jobTitle;
                 smsText = "JobConnect: You’ve been SELECTED for " + jobTitle;
                 break;
             case REJECTED:
@@ -129,20 +129,20 @@ public class ApplicationServiceImpl implements ApplicationService {
             if (email != null && !email.isBlank()) {
                 mailService.sendEmail(email, subject, emailBody);
             } else {
-                log.warn("⚠️ Cannot send email: missing email for {}", name);
+                log.warn("Cannot send email: missing email for {}", name);
             }
         } catch (Exception e) {
-            log.error("❌ Email failed to {}: {}", email, e.getMessage());
+            log.error("Email failed to {}: {}", email, e.getMessage());
         }
 
         try {
             if (phone != null && !phone.isBlank()) {
                 smsService.sendSms(phone, smsText);
             } else {
-                log.warn("⚠️ Cannot send SMS: missing phone for {}", name);
+                log.warn("Cannot send SMS: missing phone for {}", name);
             }
         } catch (Exception e) {
-            log.error("❌ SMS failed to {}: {}", phone, e.getMessage());
+            log.error("SMS failed to {}: {}", phone, e.getMessage());
         }
     }
 }

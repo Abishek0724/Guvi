@@ -1,0 +1,18 @@
+# Use a lightweight OpenJDK 21 base image
+FROM eclipse-temurin:21-jdk-alpine
+
+# Set environment variables
+ENV JAVA_OPTS=""
+ENV PORT=8080
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the built JAR file into the container (replace with actual JAR name after build)
+COPY target/backend-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose the port the app runs on
+EXPOSE ${PORT}
+
+# Run the app
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]

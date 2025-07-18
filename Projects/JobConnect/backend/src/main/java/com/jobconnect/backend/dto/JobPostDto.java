@@ -22,7 +22,4 @@ public class JobPostDto {
     private String category;
     private String companyName;
 
-    // Removed fields not in entity:
-    // - skillsRequired
-    // - category
 }

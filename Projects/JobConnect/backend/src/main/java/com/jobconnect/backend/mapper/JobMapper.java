@@ -15,7 +15,7 @@ public class JobMapper {
                 .description(job.getDescription())
                 .location(job.getLocation())
                 .salary(job.getSalary())
-                .category(job.getCategory()) // Now properly mapped
+                .category(job.getCategory())
                 .level(job.getLevel())
                 .postedDate(job.getPostedDate().toLocalDate())
                 .companyName(job.getEmployer().getCompanyName())
@@ -28,7 +28,7 @@ public class JobMapper {
                 .description(dto.getDescription())
                 .location(dto.getLocation())
                 .salary(dto.getSalary())
-                .category(dto.getCategory()) // Now properly mapped
+                .category(dto.getCategory())
                 .level(dto.getLevel())
                 .build();
     }

@@ -144,7 +144,7 @@ public class CandidateServiceImpl implements CandidateService {
         if (resumeFile != null && !resumeFile.isEmpty()) {
             try {
                 Map uploadResult = cloudinary.uploader().upload(resumeFile.getBytes(), ObjectUtils.asMap(
-                        "resource_type", "raw", // for files like .pdf, .docx
+                        "resource_type", "raw",
                         "folder", "resumes"));
                 String resumeUrl = uploadResult.get("secure_url").toString();
                 profile.setResumeUrl(resumeUrl);
@@ -174,8 +174,8 @@ public class CandidateServiceImpl implements CandidateService {
                 .map(app -> ApplicationResponseDto.builder()
                         .applicationId(app.getId())
                         .jobId(app.getJob().getId())
-                        .jobTitle(app.getJob().getTitle()) // ✅ Set title
-                        .jobLocation(app.getJob().getLocation()) // ✅ Set location
+                        .jobTitle(app.getJob().getTitle())
+                        .jobLocation(app.getJob().getLocation())
                         .applicationStatus(app.getStatus().name())
                         .appliedAt(app.getAppliedAt())
                         .build())
